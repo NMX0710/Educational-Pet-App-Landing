@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>PetReady</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+	<div class="loader">
+		<p>
+			Loading... Retrieiving your personal companion...
+		</p>
+		<div class="progress" id="progress-spinner"></div>
+	</div>
+
+	<nav class="navbar">
+		<h3 class="logo">PetReady</h3>
+		<button class="button-navbar">JOIN WAITLIST</button>
+	</nav>
+
+	<div class="container">
+		<section class="section first">
+			<div class="section-one-container">
+				<h1>Play, Learn, Care!</h1>
+				<p>
+					PetReady is an innovative AR app that teaches kids pet care responsibilities. Through interactive tasks, children learn to care for a virtual pet, and parents gain insights into their child's readiness for a real pet.
+				</p>
+				<button class="button-hero">KNOW MORE</button>
+			</div>
+		</section>
+	
+		<section class="section second">
+			<div class="section-two-container">
+				<div class="section-two-text">
+					<h2>Why PetReady?</h2>
+					<p>
+						<b>Interactive Tasks:</b> Engaging AR activities for pet care.<br>
+						<b>Responsibility Score:</b> Assesses readiness for a real pet.<br>
+						<b>Parental Insights:</b> Detailed reports on child's progress.<br>
+						<b>Free & Ad-Supported:</b> Accessible to everyone.
+					</p>
+				</div>    
+				<div class="custom-bg"></div>
+			</div>
+		</section>
+	
+		<section class="section third">
+			<div class="section-third-container">
+				<h2>Time to get PetReady?</h2>
+				<p>
+					<b>Download & Setup:</b> Create a profile for your child.<br>
+					<b>Choose a Pet:</b> Select a virtual pet.<br>
+					<b>Complete Tasks:</b> Daily AR tasks for pet care.<br>
+					<b>Track Progress:</b> Monitor your child's engagement.<br>
+					<b>Receive a Score:</b> Get a detailed readiness report.
+				</p>
+				<!-- <button class="button-customize">CUSTOMIZE</button> -->
+				<br>
+				<img class="google-play-logo" src="assets/google_play.png">
+				<br>
+				<img class="app-store-logo" src="assets/apple_store.png">
+			</div>
+		</section>
+	
+		<footer>
+			<button class="button-footer">BACK TO TOP</button>
+		</footer>
+	</div>
+
+	<div id="webgi-canvas-container">
+		<canvas id="webgi-canvas"></canvas>
+		<button class="button-customize button-exit">EXIT</button>
+	</div>
+
+	<script src="src/index.ts" type="module"></script>
+</body>
+
+</html>
