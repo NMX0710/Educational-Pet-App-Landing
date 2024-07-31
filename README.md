@@ -41,8 +41,8 @@ PetReady is a free application supported by advertisements. This ensures that th
 
 For more information, support, or business inquiries, please contact us at:
 
-- **Email:** [support@petreadyapp.com](mailto:support@petreadyapp.com)
-- **Website:** [www.petreadyapp.com](http://www.petreadyapp.com)
+- **Email:** [support@petready.app](mailto:support@petready.app)
+- **Website:** [www.petready.app](http://www.petready.app)
 
 ---
 
