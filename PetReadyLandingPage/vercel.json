@@ -1,7 +1,6 @@
 {
     "rewrites": [
-      { "source": "/form", "destination": "/form.html" },
-      { "source": "/quiz", "destination": "/quiz/quiz.js" }
+      { "source": "/form", "destination": "/form.html" }
     ],
     "redirects": [
       { "source": "/", "destination": "/index.html", "permanent": true }
