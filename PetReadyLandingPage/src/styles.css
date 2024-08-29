@@ -1,13 +1,14 @@
+/* Original Styles for Home Screen Components */
 body {
   font-family: 'DM Sans', sans-serif;
   overflow-x: hidden;
   overflow-y: hidden;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   overscroll-behavior: none;
 }
 
-.navbar{
+.navbar {
   position: absolute;
   display: flex;
   align-content: space-between;
@@ -16,7 +17,13 @@ body {
   margin-top: 20px;
 }
 
-.button-navbar{
+.navbar-buttons {
+  display: flex;
+  gap: 10px; /* Adds space between buttons */
+  margin-right: 40px;
+}
+
+.button-navbar {
   padding: 7px 20px;
   border-radius: 30px;
   color: black;
@@ -29,22 +36,23 @@ body {
   font-weight: 700;
   font-size: 0.7rem;
 }
-.button-navbar:hover{
+
+.button-navbar:hover {
   background: black;
   color: white;
 }
 
-.logo{
+.logo {
   margin-left: 40px;
   font-size: 1.9rem;
 }
 
-.section-one-container{
+.section-one-container {
   width: 400px;
   margin-left: 20%;
 }
 
-.first h1{
+.first h1 {
   font-size: 6rem;
   line-height: 6rem;
   letter-spacing: -0.1rem;
@@ -52,7 +60,7 @@ body {
   margin: 0 0 30px -10px;
 }
 
-.button-hero{
+.button-hero {
   background: #fea6b4;
   color: black;
   border: none;
@@ -65,12 +73,13 @@ body {
   cursor: pointer;
   transition: all 0.8s ease;
 }
-.button-hero:hover{
+
+.button-hero:hover {
   background: black;
   color: white;
 }
 
-.button-customize{
+.button-customize {
   background: #fea6b4;
   color: black;
   border: none;
@@ -83,12 +92,13 @@ body {
   cursor: pointer;
   transition: all 0.8s ease;
 }
-.button-customize:hover{
+
+.button-customize:hover {
   background: black;
   color: white;
 }
 
-.section{
+.section {
   display: flex;
   width: 100vw;
   height: 100vh;
@@ -96,35 +106,35 @@ body {
   z-index: -1;
 }
 
-.second{
+.second {
   justify-content: flex-end;
   position: relative;
 }
 
-.section-two-container{
+.section-two-container {
   width: 410px;
   margin-right: 14%;
   z-index: 1;
 }
 
-.section-two-text{
+.section-two-text {
   line-height: 2.0rem;
 }
 
-.section-third-container{
+.section-third-container {
   width: 460px;
   margin-left: 15%;
   z-index: 1;
   line-height: 2.0rem;
 }
 
-h2{
+h2 {
   font-size: 3rem;
   letter-spacing: -2px;
   line-height: 2.5rem;
 }
 
-.custom-bg{
+.custom-bg {
   width: 100%;
   height: 800px;
   background: #26CCDB;
@@ -138,14 +148,14 @@ h2{
   z-index: -1;
 }
 
-footer{
+footer {
   background: #26CCDB;
   padding: 70px;
   display: flex;
   justify-content: center;
 }
 
-.button-footer{
+.button-footer {
   background: #fea6b4;
   color: black;
   border: none;
@@ -156,12 +166,12 @@ footer{
   transition: all 0.8s ease;
 }
 
-.button-footer:hover{
+.button-footer:hover {
   background: black;
   color: white;
 }
 
-h1{
+h1 {
   margin-left: 15%;
   font-size: 10rem;
   line-height: 8rem;
@@ -173,7 +183,8 @@ h1{
   position: fixed;
   top: 0; /* Stick to the top */
 }
-#webgi-canvas-container{
+
+#webgi-canvas-container {
   width: 100vw;
   height: 100vh;
   pointer-events: none;
@@ -185,15 +196,15 @@ h1{
   pointer-events: none; /* Allow interaction */
 }
 
-.google-play-logo{
+.google-play-logo {
   width: 45%;
 }
 
-.app-store-logo{
+.app-store-logo {
   width: 45%;
 }
 
-.loader{
+.loader {
   background: black;
   position: absolute;
   color: white;
@@ -207,7 +218,7 @@ h1{
   flex-direction: column;
 }
 
-.progress{
+.progress {
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -215,6 +226,7 @@ h1{
   border-top: 10px solid black;
   animation: spinner 2s linear infinite;
 }
+
 @keyframes spinner {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -232,18 +244,17 @@ h1{
     width: 250px;
   }
 
-  .google-play-logo{
+  .google-play-logo {
     width: 65%;
   }
-  
-  .app-store-logo{
+
+  .app-store-logo {
     width: 65%;
   }
 }
 
 /* Mobile Adjustments */
 @media (max-width: 600px) {
-  
   .first h1 {
     font-size: 4rem;
     line-height: 3rem;
@@ -261,10 +272,10 @@ h1{
     width: 60%;
   }
 
-  .second{
+  .second {
     align-items: start;
   }
-  
+
   .section-two-container {
     width: 45%;
     margin-top: 30%;
@@ -275,9 +286,156 @@ h1{
     width: 250px;
   }
 
-  .navbar{
+  .navbar {
+    background: #ffffff9c;
+    backdrop-filter: blur(1px);
+  }
+}
+
+/* New Styles for Form Page */
+.form-navbar {
+  position: absolute;
+  display: flex;
+  align-content: space-between;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 20px;
+  z-index: 1000;
+}
+
+.form-navbar-buttons {
+  display: flex;
+  gap: 10px;
+  margin-right: 40px;
+}
+
+.form-button-navbar {
+  transition: background 0.3s;
+  padding: 7px 20px;
+  border-radius: 30px;
+  color: black;
+  background-color: #fea6b4;
+  border: none;
+  cursor: pointer;
+  margin-right: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 0.7rem;
+}
+
+.form-button-navbar:hover {
+  background: black;
+  color: white;
+}
+
+.form-logo {
+  margin-left: 40px;
+  font-size: 2rem;
+  color: black;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.form-section-one-container {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  text-align: center; /* Ensure text is centered */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-section-one-container h1 {
+  font-size: 3rem;
+  color: black;
+  margin-bottom: 20px;
+  margin-right: 70px;
+}
+
+.form-section-one-container p {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin-bottom: 30px;
+  text-align: center; /* Center the paragraph */
+}
+
+.form-section-one-container label {
+  display: block;
+  text-align: left;
+  margin-bottom: 8px;
+  color: #34495e;
+  font-weight: 600;
+}
+
+.form-section-one-container input[type="text"],
+.form-section-one-container input[type="email"],
+.form-section-one-container select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.form-radio-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.form-radio-group label {
+  margin-right: 20px;
+}
+
+.form-button-hero {
+  color: black;
+  background-color: #fea6b4;
+  border: none;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 15px 30px;
+  margin-top: 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.form-button-hero:hover {
+  background: black;
+  color: white;
+}
+
+/* Mobile Adjustments for Form Page */
+@media (max-width: 600px) {
+  .form-navbar {
     background: #ffffff9c;
     backdrop-filter: blur(1px);
   }
 
+  .form-section-one-container {
+    width: 100%;
+    padding: 30px;
+  }
+
+  .form-section-one-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .form-button-hero {
+    font-size: 0.9rem;
+  }
 }

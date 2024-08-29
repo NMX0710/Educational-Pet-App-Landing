@@ -32,6 +32,9 @@
   },
   "type": "module",
   "dependencies": {
+    "firebase": "^10.13.0",
     "gsap": "^3.12.5"
-  }
+  },
+  "author": "",
+  "license": "ISC"
 }

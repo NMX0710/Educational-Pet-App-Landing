@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PetReady - Dog Quiz</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+        <nav class="navbar">
+            <h3 class="logo">PetReady</h3>
+            <button class="button-navbar">CHECK OUT OUR LANDING PAGE!</button>
+        </nav>
+    
+        <div class="container">
+            <section class="quiz-section">
+                <h1>What kind of dog are you?</h1>
+                <form id="dog-quiz">
+                    <div id="question-container">
+                        <div id="question">Question will be displayed here</div>
+                        <div id="answer-buttons" class="btn-grid">
+                            <button class="btn">Answer 1</button>
+                            <button class="btn">Answer 2</button>
+                            <button class="btn">Answer 3</button>
+                            <button class="btn">Answer 4</button>
+                          </div>
+                    </div>
+                    <div class="controls">
+                        <button id="next-btn" type="button" class="button-next">Next</button>
+                    </div>
+                </form>
+                <div id="result-container" class="result-container hide">
+                    <div id="result-text"></div>
+                    <img id="result-image" src="" alt="Result Image" class="result-image"/>
+                </div>
+            </section>
+        </div>
+    
+    <footer>
+        <button class="button-footer">BACK TO TOP</button>
+    </footer>
+    
+    <script src="src/quiz.js" type="module"></script>
+</body>
+</html>
+
+

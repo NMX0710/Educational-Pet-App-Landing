@@ -178,9 +178,15 @@ async function setupViewer(){
 
     // JOIN WAITLIST
     document.querySelector('.button-navbar')?.addEventListener('click', () => {
-        // Goto link https://forms.gle/Ln9FeCKiTxQwn3Pd6
-        window.location.replace('https://forms.gle/Ln9FeCKiTxQwn3Pd6')
-    })
+        window.location.replace('form.html'); // Redirect to the form page
+    });
+
+    document.querySelector(".quiz")?.addEventListener("click", () => {
+      // Goto link Quiz Page
+      window.location.replace(
+        "quiz/index.html"
+      );
+    });
 
     // KNOW MORE
     document.querySelector('.button-hero')?.addEventListener('click', () => {
