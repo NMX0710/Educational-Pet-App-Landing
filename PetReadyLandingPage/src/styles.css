@@ -1,3 +1,4 @@
+/* Original Styles for Home Screen Components */
 body {
   font-family: 'DM Sans', sans-serif;
   overflow-x: hidden;
@@ -78,6 +79,25 @@ body {
   color: white;
 }
 
+.button-customize {
+  background: #fea6b4;
+  color: black;
+  border: none;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 15px 30px;
+  margin-top: 24px;
+  margin-right: 40px;
+  font-size: 0.6rem;
+  cursor: pointer;
+  transition: all 0.8s ease;
+}
+
+.button-customize:hover {
+  background: black;
+  color: white;
+}
+
 .section {
   display: flex;
   width: 100vw;
@@ -118,6 +138,9 @@ h2 {
   width: 100%;
   height: 800px;
   background: #26CCDB;
+  -webkit-transform: skew(20deg);
+  -moz-transform: skew(20deg);
+  -o-transform: skew(20deg);
   transform: skew(20deg) rotate(21deg);
   position: absolute;
   top: 0;
@@ -173,7 +196,10 @@ h1 {
   pointer-events: none; /* Allow interaction */
 }
 
-.google-play-logo,
+.google-play-logo {
+  width: 45%;
+}
+
 .app-store-logo {
   width: 45%;
 }
@@ -192,9 +218,18 @@ h1 {
   flex-direction: column;
 }
 
-#lottie-loader {
-  width: 200px;
-  height: 200px;
+.progress {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 10px solid #26CCDB;
+  border-top: 10px solid black;
+  animation: spinner 2s linear infinite;
+}
+
+@keyframes spinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* Table Adjustments */
@@ -209,7 +244,10 @@ h1 {
     width: 250px;
   }
 
-  .google-play-logo,
+  .google-play-logo {
+    width: 65%;
+  }
+
   .app-store-logo {
     width: 65%;
   }
@@ -251,5 +289,153 @@ h1 {
   .navbar {
     background: #ffffff9c;
     backdrop-filter: blur(1px);
+  }
+}
+
+/* New Styles for Form Page */
+.form-navbar {
+  position: absolute;
+  display: flex;
+  align-content: space-between;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 20px;
+  z-index: 1000;
+}
+
+.form-navbar-buttons {
+  display: flex;
+  gap: 10px;
+  margin-right: 40px;
+}
+
+.form-button-navbar {
+  transition: background 0.3s;
+  padding: 7px 20px;
+  border-radius: 30px;
+  color: black;
+  background-color: #fea6b4;
+  border: none;
+  cursor: pointer;
+  margin-right: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 0.7rem;
+}
+
+.form-button-navbar:hover {
+  background: black;
+  color: white;
+}
+
+.form-logo {
+  margin-left: 40px;
+  font-size: 2rem;
+  color: black;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.form-section-one-container {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  text-align: center; /* Ensure text is centered */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-section-one-container h1 {
+  font-size: 3rem;
+  color: black;
+  margin-bottom: 20px;
+  margin-right: 70px;
+}
+
+.form-section-one-container p {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin-bottom: 30px;
+  text-align: center; /* Center the paragraph */
+}
+
+.form-section-one-container label {
+  display: block;
+  text-align: left;
+  margin-bottom: 8px;
+  color: #34495e;
+  font-weight: 600;
+}
+
+.form-section-one-container input[type="text"],
+.form-section-one-container input[type="email"],
+.form-section-one-container select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.form-radio-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.form-radio-group label {
+  margin-right: 20px;
+}
+
+.form-button-hero {
+  color: black;
+  background-color: #fea6b4;
+  border: none;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 15px 30px;
+  margin-top: 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.form-button-hero:hover {
+  background: black;
+  color: white;
+}
+
+/* Mobile Adjustments for Form Page */
+@media (max-width: 600px) {
+  .form-navbar {
+    background: #ffffff9c;
+    backdrop-filter: blur(1px);
+  }
+
+  .form-section-one-container {
+    width: 100%;
+    padding: 30px;
+  }
+
+  .form-section-one-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .form-button-hero {
+    font-size: 0.9rem;
   }
 }
