@@ -1,0 +1,99 @@
+Story
+PetReady - Empowering Responsible Pet Ownership Through AI-Driven Learning
+
+At PetReady, we believe that pet ownership is one of life's most rewarding experiences, but it comes with great responsibility. Our mission is to prepare individuals and families for the joys and challenges of having a pet by providing essential care skills through interactive and engaging lessons. With your help, we can bring this vision to life with our app, PetReady, which uses cutting-edge AI technology to create personalized, comprehensive pet care education experiences.
+
+Every parent has faced their child's begging for a new pet. Our co-founders all had a similar experience where a younger sibling or friend begged their parents for a puppy. After a week, no less, the responsibility fell to us. Through customer interviews, we learned that kids often want pets, but their enthusiasm usually fades after a few weeks which leads to unpreparedness of the family taking care of pets and even possibly abandonment of these pets. Our goal is to help parents evaluate if their kids are truly ready for a pet, before spending thousands of dollars on a new commitment they couldn't handle.
+
+Why We Care
+
+As pet lovers and experts, we know that many individuals and families bring home a pet without fully understanding the commitment it requires. This often leads to stress, unpreparedness, and, heartbreakingly, sometimes rehoming. We care deeply about creating a solution that helps people understand what it truly means to care for a pet before they take on the responsibility.
+
+But it's more than just teaching responsibility. It's about saving lives. Thousands of pets end up in shelters each year, and many of them never find their forever homes. By educating current and future pet owners, we can reduce the number of pets that end up in shelters, and in turn, reduce the number of animals that face euthanasia in kill shelters.
+
+Our goal is to foster empathy, responsibility, and confidence in pet owners of all ages, ensuring they are ready to provide the best care possible for their animal companions. With PetReady, users will learn how to feed, groom, exercise, and care for a pet through AI-tailored interactive lessons, quizzes, and tasks that adapt to any type of pet.
+
+How PetReady Works
+
+PetReady leverages the power of Google's Gemini AI to create a truly personalized pet care learning experience:
+
+1. Customized Pet Profiles: Users can select a specific breed of pet, along with age, gender, and any special conditions. Gemini AI then tailors the entire app experience to that unique pet. Based on the pet profile, Gemini AI provides a daily list of care tasks that users must complete, ensuring comprehensive and appropriate care.
+
+3. Interactive Learning Content: We use Gemini AI to generate summaries of course material, daily progress reports, and specific pet information, making learning engaging and relevant. Leveraging the experimental Google Vids feature, we create engaging short-form educational videos using stock images, voices, and music, bringing all pet care concepts to life.
+
+5. Adaptive Curriculum: We continuously adjusts the learning experience based on user progress and interaction, ensuring that the content remains challenging and relevant. A/B testing will be backbone of improving PetReady and we will continue to update, refine, and change the app based on user feedback! Once users graduate from PetReady and ready to take on a real pet, use PetReady as a task manager and continue your learning!
+
+6. Family Dashboard: For family accounts, a parent dashboard allows oversight of progress and engagement across all family members. Individual accounts will also have the power to view progress and engagement and even connect with other members to help take care of a pet together. 
+
+7. Augmented Reality: While not our primary focus, we incorporate AR features to complement the learning experience, allowing users to visualize pet care tasks in their own environment. We want to make PetReady as real as possible, and we want to find innovative ways to mimic the cumbersome process of training puppies or the playful aspects of giving treats!
+
+Who We Are
+
+
+We are a dedicated team of animal care experts, educators, and technology innovators committed to improving the lives of pets and their owners. Our team is composed of Georgia Tech students with a wide array of experiences and interning at the most competitive companies. Our combined expertise in pet care, education, and AI-driven app development has driven us to create PetReady as a groundbreaking and impactful resource.
+
+Join Us on This Journey
+
+
+By backing our project, you're not just supporting an app—you're helping to shape a generation of responsible, informed pet owners. You're making a direct impact on the lives of countless animals by helping reduce the number of pets that end up in shelters and rescues.
+
+Together, we can give people the tools they need to care for pets with love and knowledge, ensuring a better experience for both the owners and their animal companions. With PetReady, we're not just teaching responsibility; we're saving lives and strengthening the bond between humans and pets.
+
+Thank you for believing in PetReady!
+
+
+
+
+Risks and challenges
+At PetReady, we’re committed to delivering a high-quality, engaging, and educational app that prepares families for the responsibilities of pet ownership. However, like any project, there are potential risks and challenges we may encounter along the way. Here’s what they are and how we plan to overcome them:
+
+1. Development Delays
+Risk: Building an interactive app is a complex process that could face unforeseen technical challenges, leading to delays in our development timeline.
+Mitigation: We have a skilled development team with experience in delivering complex projects on time. We’ve also built in buffer time to our schedule to account for any unexpected issues. Regular updates will be provided to keep our backers informed of our progress.
+
+2. Ensuring Compatibility Across Devices
+Risk: Technology can vary in performance across different devices and platforms, which might create challenges in delivering a consistent user experience.
+Mitigation: We’re conducting extensive testing on a wide range of devices to ensure compatibility. Additionally, we’re working with technology experts to optimize our features and will provide clear guidance on device requirements for the best experience.
+
+3. Content Creation and Expansion
+Risk: Creating and expanding content, such as lessons, quizzes, and activities, requires time and careful planning to ensure it’s both educational and engaging. There’s a risk of underestimating the time needed to develop high-quality content.
+Mitigation: We’ve already outlined a detailed content development plan and are collaborating with educators and pet care experts to ensure the material is accurate, engaging, and ready on schedule. We also have contingency plans to adjust the scope of content if needed, without compromising the quality of the app.
+
+4. Marketing and Outreach
+Risk: Reaching our target audience of families, schools, and pet organizations could be challenging, especially in a crowded app market.
+Mitigation: We’ve partnered with marketing professionals and developed a strategic outreach plan to maximize visibility. Our efforts include targeted digital marketing, social media campaigns, and partnerships with relevant organizations. We’ll also be leveraging our backer community to help spread the word.
+
+5. Post-Launch Support and Updates
+Risk: After launching PetReady, maintaining and updating the app to fix bugs, improve features, and add new content is critical. There’s a risk of resource constraints post-launch.
+Mitigation: We’ve planned for ongoing support and updates by setting aside part of our budget for post-launch development. We’re committed to continuous improvement and will actively seek user feedback to guide future updates.
+
+We understand that every project comes with its own set of risks and challenges, but we’re fully committed to delivering on our promises. With a dedicated team, a clear plan, and the support of our backers, we are confident that we can overcome any hurdles that arise and successfully bring PetReady to life.
+
+Thank you for believing in us and for helping us make PetReady a reality for families everywhere!
+
+Learn about accountability on Kickstarter
+Use of AI
+I plan to use AI-generated content in my project.
+What parts of your project will use AI generated content? Please be as specific as possible.
+We will prompt the Gemini AI to provide a list of daily tasks tailored to a specific pet. User's will be able to select a specific breed of pet, along with age, gender, and conditions and AI will provide a list of daily tasks the user must complete. Tasks include optimal time, description, and activity. Additionally, we are using Google Vids, an experimental feature of Gemini AI to create engaging videos. Images, voices, and music used in the video are stock or provided and selected by the AI. Other uses include prompting AI to get a summary of course material, summary of daily progress, summary of pet information, general and specific pet information, and summary of tasks. We plan on using AI to get detailed pet information and tailor the app experience to any pet. We are actively working on validation pipelines to make sure the AI output is truthful, accurate, and provides all necessary information. This pipeline will consist of pet experts and veterinarians, with the promise of keeping all content educational and ethical.
+
+Do you have the consent of owners of the works that were (or will be) used to produce the AI generated portion of your projects? Please explain.
+We have captured consent of the information being given by the AI through direct links when plausible, shown in the app as links to the site.
+
+Learn about AI policy on Kickstarter
+Environmental commitments
+Visit our Environmental Resources Center to learn how Kickstarter encourages sustainable practices.
+Long-lasting design
+PetReady is designed to be a long-lasting educational tool. By focusing on digital content and updates through Gemini, we ensure the app remains relevant and valuable over time.
+
+Reusability and recyclability
+As a digital product, PetReady inherently reduces the need for physical materials. However, for any promotional materials or rewards, we commit to using recyclable materials and minimizing packaging waste.
+
+Sustainable materials
+If physical rewards or promotional items are part of our campaign, we’ll source them from suppliers that prioritize sustainable and eco-friendly materials. This includes using recycled paper, organic fabrics, or biodegradable materials.
+
+Environmentally friendly factories
+We will carefully select manufacturers for any physical components or merchandise associated with PetReady, ensuring they operate with environmentally friendly practices. We’ll prioritize working with partners who have certifications in sustainability and ethical labor practices.
+
+Sustainable Distribution
+For any physical rewards, we’ll use sustainable fulfillment options, such as carbon-neutral shipping and minimal packaging. We’ll also explore options for local production and distribution to reduce the carbon footprint associated with transportation.
