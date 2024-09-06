@@ -394,9 +394,13 @@
     </footer>
 
     <script>
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
+        // Check if menu-toggle exists before adding an event listener
+        const menuToggle = document.querySelector('.menu-toggle');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.toggle('active');
+            });
+        }
     
         window.addEventListener('load', function() {
             console.log('Page fully loaded'); // Log when the page load event fires
@@ -411,6 +415,7 @@
             loadingScreen.classList.add('hidden');
         }, 5000); // 5 seconds fallback
     </script>
+    
     
 </body>
 </html>
