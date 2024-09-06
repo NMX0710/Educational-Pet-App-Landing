@@ -397,17 +397,20 @@
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             document.querySelector('.nav-links').classList.toggle('active');
         });
-
+    
         window.addEventListener('load', function() {
+            console.log('Page fully loaded'); // Log when the page load event fires
             const loadingScreen = document.getElementById('loading-screen');
             loadingScreen.classList.add('hidden');
         });
-
+    
         // Fallback: Hide the loading screen after 5 seconds in case the 'load' event is delayed
         setTimeout(function() {
+            console.log('Fallback timeout triggered'); // Log when the fallback timer triggers
             const loadingScreen = document.getElementById('loading-screen');
             loadingScreen.classList.add('hidden');
-        }, 1000);
+        }, 5000); // 5 seconds fallback
     </script>
+    
 </body>
 </html>
