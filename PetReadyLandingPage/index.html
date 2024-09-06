@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetReady - AI-Powered Pet Care Education</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
     <style>
         :root {
             --primary-color: #4CAF50;
@@ -23,12 +25,24 @@
             background-color: var(--background-color);
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        /* Loading screen styles */
+        #loading-screen {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
         }
-        
+
+        #loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease-out;
+        }
+
         header {
             background-color: white;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -281,6 +295,12 @@
     </style>
 </head>
 <body>
+
+    <!-- Loading Screen with Lottie Animation -->
+    <div id="loading-screen">
+        <dotlottie-player src="https://lottie.host/fcbeb25f-aa74-4c46-8ce3-594d5fbd6be4/D3wyCldtLm.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+    </div>
+
     <header>
         <div class="container">
             <nav>
@@ -376,6 +396,12 @@
     <script>
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // JavaScript to hide loading screen when page is fully loaded
+        window.addEventListener('load', function() {
+            const loadingScreen = document.getElementById('loading-screen');
+            loadingScreen.classList.add('hidden');
         });
     </script>
 </body>
