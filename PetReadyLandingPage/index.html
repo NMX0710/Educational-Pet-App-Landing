@@ -398,11 +398,16 @@
             document.querySelector('.nav-links').classList.toggle('active');
         });
 
-        // JavaScript to hide loading screen when page is fully loaded
         window.addEventListener('load', function() {
             const loadingScreen = document.getElementById('loading-screen');
             loadingScreen.classList.add('hidden');
         });
+
+        // Fallback: Hide the loading screen after 5 seconds in case the 'load' event is delayed
+        setTimeout(function() {
+            const loadingScreen = document.getElementById('loading-screen');
+            loadingScreen.classList.add('hidden');
+        }, 5000); // 5 seconds fallback
     </script>
 </body>
 </html>
