@@ -15,9 +15,9 @@ export default function Component() {
 
   // Refs for each section
   const featuresRef = useRef(null);
-  const resourcesRef = useRef(null);
+  // const resourcesRef = useRef(null);
   const feedbackRef = useRef(null);
-  const kickstartRef = useRef(null);
+  // const kickstartRef = useRef(null);
 
   // Function to scroll to a ref
   const scrollToRef = (ref) => {
@@ -97,7 +97,7 @@ export default function Component() {
                 </svg>
                 <div className="flex flex-col">
                   <span className="text-xs font-medium">
-                    Get Early Access on the
+                    Coming soon on the
                   </span>
                   <span className="text-lg font-bold">App Store</span>
                 </div>
@@ -111,7 +111,7 @@ export default function Component() {
                   <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
                 </svg>
                 <div className="flex flex-col">
-                  <span className="text-xs font-medium">Download now on</span>
+                  <span className="text-xs font-medium">Coming soon on</span>
                   <span className="text-lg font-bold">Google Play</span>
                 </div>
               </button>
@@ -127,12 +127,12 @@ export default function Component() {
           >
             Our Features
           </button>
-          <button
+          {/* <button
             onClick={() => scrollToRef(resourcesRef)}
             className="bg-custom-light-blue text-gray-600 font-semibold mx-14 px-10 py-5 text-md rounded-3xl flex items-center hover:bg-custom-hover-blue transition-colors duration-200"
           >
             Our Resources
-          </button>
+          </button> */}
           <button
             onClick={() => scrollToRef(feedbackRef)}
             className="bg-custom-light-blue text-gray-600 font-semibold mx-14 px-10 py-5 text-md rounded-3xl flex items-center hover:bg-custom-hover-blue transition-colors duration-200"
@@ -156,21 +156,21 @@ export default function Component() {
         <hr className="my-4 border-t-4 border-gray-300 w-11/12 mx-auto" />
           
         {/* Features Section */}
-        <div className="mb-16 mt-16 flex justify-center">
+        <div ref={featuresRef} className="mb-16 mt-16 flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center max-w-5xl w-full">
             {/* Image on the left */}
             <div className="md:col-span-1">
               <Image
-                src="/assets/group_png.png"
+                src="/assets/1.png"
                 width={500}  // Increase width
                 height={300} // Increase height
                 alt="Family dashboard illustration"
-                className="mt-4"
+                className="mt-4 rounded-xl transition-transform duration-300 ease-in-out transform hover:scale-105"
               />
             </div>
 
             {/* Text on the right */}
-            <div className="md:col-span-2 text-left">
+            <div className="md:col-span-2 text-left ml-24">
               <h2 className="text-6xl font-bold text-gray-600 mb-9">Personalized pet profiles</h2>
               <p className="text-xl font-semibold text-gray-500">
                 Get personalized experiences by selecting your pet's breed, age, and special needs. Our app creates a personalized care plan just for you.
@@ -179,53 +179,54 @@ export default function Component() {
           </div>
         </div>
 
-        {/* Features Section */}
+        {/* Responsibility Section */}
         <div className="mb-16 flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center max-w-5xl w-full">
             {/* Text on the left */}
             <div className="md:col-span-2 text-left">
               <h2 className="text-6xl font-bold text-gray-600 mb-9">Responsibility made fun</h2>
               <p className="text-xl font-semibold text-gray-500">
-              Through interactive games and activities, children learn the responsibilities of pet ownership while having fun.
+                Through interactive games and activities, children learn the responsibilities of pet ownership while having fun.
               </p>
             </div>
             
             {/* Image on the right */}
             <div className="md:col-span-1">
               <Image
-                src="/assets/group_png.png"
+                src="/assets/2.png"
                 width={500}  // Increase width
                 height={300} // Increase height
                 alt="Family dashboard illustration"
-                className="mt-4"
+                className="mt-4 rounded-xl transition-transform duration-300 ease-in-out transform hover:scale-105"
               />
             </div>
           </div>
         </div>
 
-        {/* Features Section */}
+        {/* Family Dashboard Section */}
         <div className="mb-16 mt-16 flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center max-w-5xl w-full">
             {/* Image on the left */}
             <div className="md:col-span-1">
               <Image
-                src="/assets/group_png.png"
+                src="/assets/3.png"
                 width={500}  // Increase width
                 height={300} // Increase height
                 alt="Family dashboard illustration"
-                className="mt-4"
+                className="mt-4 rounded-xl transition-transform duration-300 ease-in-out transform hover:scale-105"
               />
             </div>
 
             {/* Text on the right */}
-            <div className="md:col-span-2 text-left">
+            <div className="md:col-span-2 text-left ml-24">
               <h2 className="text-6xl font-bold text-gray-600 mb-9">Family Dashboard</h2>
               <p className="text-xl font-semibold text-gray-500">
-              Track progress across family members and collaborate on pet care tasks with our intuitive dashboard.
+                Track progress across family members and collaborate on pet care tasks with our intuitive dashboard.
               </p>
             </div>
           </div>
         </div>
+
 
 
       </main>
@@ -235,37 +236,64 @@ export default function Component() {
 
 
       {/* Testimonials Section */}
-      <section className="py-16">
+      <section ref={feedbackRef} className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">
-            What Our Customers Say
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                role: "Professor at Georgia Tech, Mother of an 11-year-old",
-                quote:
-                  "PetReady is exactly what we've been looking for! My daughter is caring for a bearded dragon, and it's been challenging to get her to stick to the daily feeding routine—especially since handling worms can be icky and time-consuming. An app that realistically simulates pet care and acts as a habit changer, I'd happily share it with other moms in my Facebook groups. A one-time fee sounds perfect!",
-              },
-              {
-                role: "Parents of Kids Aged 12-14",
-                quote:
-                  "Our kids have been asking for a pet, but we're concerned about the time and financial commitments. We love the idea of letting them practice the real responsibilities involved. Features like notifications for tasks and informational cards explaining 'why' each task is important would be great. We'd also love to see options to understand that different breeds have different needs and personalities.",
-              },
-              {
-                role: "Parents of a 15 and 9-year-old",
-                quote:
-                  "Getting a pet is like adding a new family member—it's a huge commitment. Our kids want one, but we're not sure they're ready for the responsibility. If there's a way to test their readiness and see a report card on their readiness, we'd definitely consider using it. Anything that helps build consistency in habits is a plus!",
-              },
-            ].map((testimonial, index) => (
-              <div key={index} className="bg-sky-100 rounded-lg shadow-md p-6">
-                <p className="mb-4">{testimonial.quote}</p>
-                <p className="font-bold">{testimonial.role}</p>
-              </div>
-            ))}
+          <div
+            className="rounded-lg p-20 shadow-md max-w-6xl mx-auto"
+            style={{ backgroundColor: "#58CDFF" }}  // Custom background color
+          >
+            <h2 className="text-6xl font-bold mb-8 text-center text-white">
+              What Our Customers Say
+            </h2>
+            {/* Card wrap with custom background */}
+            <div className="text-center text-yellow-500 mb-8 text-5xl">
+              ⭐⭐⭐⭐⭐ {/* 5 gold star emojis */}
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  role: "Professor at Georgia Tech, Mother of an 11-year-old",
+                  quote: (
+                    <>
+                      <strong>PetReady</strong> is exactly what we've been looking for! My daughter is caring for a bearded dragon, and it's been challenging to get her to stick to the daily feeding routine—especially since handling worms can be icky and time-consuming. An app that <strong>realistically simulates pet care</strong> and acts as a habit changer, I'd happily share it with other moms in my Facebook groups. A one-time fee sounds perfect!
+                    </>
+                  ),
+                  emoji: "🦎",  // Bearded dragon emoji
+                },
+                {
+                  role: "Parents of Kids Aged 12-14",
+                  quote: (
+                    <>
+                      Our kids have been asking for a pet, but we're concerned about the time and financial commitments. We love the idea of letting them practice the <strong>real responsibilities</strong> involved. Features like notifications for tasks and informational cards explaining 'why' each task is important would be great. We'd also love to see options to understand that different breeds have different needs and personalities.
+                    </>
+                  ),
+                  emoji: "🐶",  // Dog emoji
+                },
+                {
+                  role: "Parents of a 15 and 9-year-old",
+                  quote: (
+                    <>
+                      Getting a pet is like adding a <strong>new family member</strong>—it's a huge commitment. Our kids want one, but we're not sure they're ready for the responsibility. If there's a way to test their readiness and see a <strong>report card</strong> on their readiness, we'd definitely consider using it. Anything that helps build consistency in habits is a plus!
+                    </>
+                  ),
+                  emoji: "🐕",  // Dog emoji
+                },
+              ].map((testimonial, index) => (
+                <div key={index} className="bg-white rounded-2xl shadow-md p-6">
+                  {/* Emoji above the quote */}
+                  <div className="text-5xl text-center mb-4">{testimonial.emoji}</div>
+                  <p className="mb-4">{testimonial.quote}</p>
+                  <p className="font-bold">{testimonial.role}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
+
+
+
+
 
 
 
@@ -275,8 +303,8 @@ export default function Component() {
         <div className="grid md:grid-cols-3 gap-4 mb-10">
 
           <div className="-mt-28 ml-12">
-            <h1 className="text-7xl font-bold text-gray-800 mb-12">
-              Time to get PetReady?
+            <h1 className="text-6xl font-bold text-gray-800 mb-12">
+              Time to get PetReady? 🫵
             </h1>
             <div className="flex justify-start gap-4">
               <button className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-3xl shadow-md flex items-center">
@@ -289,7 +317,7 @@ export default function Component() {
                 </svg>
                 <div className="flex flex-col">
                   <span className="text-xs font-medium">
-                    Get Early Access on the
+                    Coming soon on the
                   </span>
                   <span className="text-lg font-bold">App Store</span>
                 </div>
@@ -303,7 +331,7 @@ export default function Component() {
                   <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
                 </svg>
                 <div className="flex flex-col">
-                  <span className="text-xs font-medium">Download now on</span>
+                  <span className="text-xs font-medium">Coming soon on</span>
                   <span className="text-lg font-bold">Google Play</span>
                 </div>
               </button>
