@@ -5,6 +5,7 @@ import Image from "next/image";
 import ModelViewer from "../components/ModelViewer";
 import BeagleViewer from "@/components/BeagleViewer";
 import confetti from "canvas-confetti"; // Import the confetti library
+import { RefObject } from 'react';
 
 export default function Component() {
   const [mounted, setMounted] = useState(false);
@@ -20,11 +21,13 @@ export default function Component() {
   // const kickstartRef = useRef(null);
 
   // Function to scroll to a ref
-  const scrollToRef = (ref) => {
-    window.scrollTo({
-      top: ref.current.offsetTop,
-      behavior: "smooth",
-    });
+  const scrollToRef = (ref: RefObject<HTMLElement>) => {
+    if (ref.current) {
+      window.scrollTo({
+        top: ref.current.offsetTop,
+        behavior: 'smooth',
+      });
+    }
   };
 
   // Function to trigger the confetti effect
