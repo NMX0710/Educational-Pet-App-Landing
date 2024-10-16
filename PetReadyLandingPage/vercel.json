@@ -1,9 +1,0 @@
-{
-    "rewrites": [
-      { "source": "/form", "destination": "/form.html" }
-    ],
-    "redirects": [
-      { "source": "/", "destination": "/index.html", "permanent": true }
-    ]
-  }
-  
