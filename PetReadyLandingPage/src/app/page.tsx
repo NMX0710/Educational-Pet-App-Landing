@@ -307,7 +307,7 @@ export default function Component() {
 
           <div className="-mt-28 ml-12">
             <h1 className="text-6xl font-bold text-gray-800 mb-12">
-              Time to get PetReady? 🫵
+              Time to get PetReady!
             </h1>
             <div className="flex justify-start gap-4">
               <button className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-3xl shadow-md flex items-center">
