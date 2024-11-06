@@ -4,20 +4,20 @@ const answerButtonsElement = document.getElementById("answer-buttons");
 const resultContainer = document.getElementById("result-container");
 const resultText = document.getElementById("result-text");
 const resultImage = document.getElementById("result-image");
+const shareButton = document.getElementById("share-btn");
 
 let shuffledQuestions,
   currentQuestionIndex,
   userAnswers,
   showingResult = false;
 
-  document.querySelector(".button-navbar")?.addEventListener("click", () => {
-    // Goto link https://forms.gle/Ln9FeCKiTxQwn3Pd6
-    window.location.replace("../index.html");
-  });
-
+document.querySelector(".button-navbar")?.addEventListener("click", () => {
+  // Goto link https://forms.gle/Ln9FeCKiTxQwn3Pd6
+  window.location.replace("https://www.petready.app/");
+});
 
 nextButton.addEventListener("click", (event) => {
-  event.preventDefault(); // 阻止默认行为
+  event.preventDefault();
   if (showingResult) {
     location.reload();
   } else if (userAnswers[currentQuestionIndex] !== undefined) {
@@ -51,7 +51,7 @@ function showQuestion(question) {
     button.classList.add("btn");
     button.innerText = answer.text;
     button.addEventListener("click", (event) => {
-      event.preventDefault(); // 阻止默认行为
+      event.preventDefault();
       selectAnswer(answer.text, button);
     });
     answerButtonsElement.appendChild(button);
@@ -87,7 +87,43 @@ function showResult() {
   nextButton.innerText = "Restart";
   nextButton.classList.remove("hide");
   showingResult = true;
+  shareButton.classList.remove("hide");
 }
+
+// Add an event listener to the share button to generate an image and share
+shareButton.addEventListener("click", () => {
+  // Use html2canvas to capture the result container as an image
+  html2canvas(resultContainer)
+    .then((canvas) => {
+      canvas.toBlob((blob) => {
+        if (!blob) {
+          console.error("Failed to create a blob from the canvas");
+          return;
+        }
+
+        // Create a new file object from the canvas blob
+        const file = new File([blob], "quiz_result.png", { type: "image/png" });
+
+        // Check if the browser can share the file
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+          // Use the Web Share API to share the image file
+          navigator
+            .share({
+              title: "PetReady Quiz Result",
+              text: "Check out my quiz result!",
+              files: [file],
+            })
+            .then(() => console.log("Sharing succeeded"))
+            .catch((error) => console.error("Sharing failed", error));
+        } else {
+          alert("Your browser does not support sharing images");
+        }
+      }, "image/png");
+    })
+    .catch((error) => {
+      console.error("Failed to generate image", error);
+    });
+});
 
 function calculateResult(answers) {
   if (
