@@ -5,6 +5,10 @@ const resultContainer = document.getElementById("result-container");
 const resultText = document.getElementById("result-text");
 const resultImage = document.getElementById("result-image");
 const shareButton = document.getElementById("share-btn");
+const shareTemplate = document.getElementById("share-template");
+const shareImage = document.getElementById("share-image");
+const shareDescription = document.getElementById("share-description");
+const closeShareButton = document.getElementById("close-share-btn");
 
 let shuffledQuestions,
   currentQuestionIndex,
@@ -34,6 +38,7 @@ nextButton.addEventListener("click", (event) => {
 
 document.addEventListener("DOMContentLoaded", () => {
   shuffledQuestions = questions;
+  shareTemplate.classList.add("hide");
   currentQuestionIndex = 0;
   userAnswers = [];
   setNextQuestion();
@@ -87,13 +92,50 @@ function showResult() {
   nextButton.innerText = "Restart";
   nextButton.classList.remove("hide");
   showingResult = true;
+  // Populate share template for sharing
+  shareImage.src = result.image;
+  shareDescription.innerText = `You are a ${result.type}!\n${result.explanation}`;
+
   shareButton.classList.remove("hide");
 }
 
-// Add an event listener to the share button to generate an image and share
+// Add an event listener to the share button to show the share template
 shareButton.addEventListener("click", () => {
-  // Use html2canvas to capture the result container as an image
-  html2canvas(resultContainer)
+  // Display the share template (like a modal)
+  shareTemplate.classList.remove("hide");
+
+  // Create a backdrop element to darken the background
+  const backdrop = document.createElement("div");
+  backdrop.id = "backdrop";
+  document.body.appendChild(backdrop);
+
+  // Close the modal when clicking on the backdrop
+  backdrop.addEventListener("click", () => {
+    closeShareTemplate();
+  });
+});
+
+// Add an event listener to the close button of the share template
+closeShareButton.addEventListener("click", () => {
+  closeShareTemplate();
+});
+
+// Function to close the share template and remove the backdrop
+function closeShareTemplate() {
+  shareTemplate.classList.add("hide");
+  const backdrop = document.getElementById("backdrop");
+  if (backdrop) {
+    backdrop.remove();
+  }
+}
+
+// Add an event listener to generate an image and share when the user wants to share the result
+shareTemplate.addEventListener("click", (event) => {
+  // Ensure the click is for sharing and not just closing the modal
+  if (event.target.id === "close-share-btn") return;
+
+  // Use html2canvas to capture the share template as an image
+  html2canvas(shareTemplate)
     .then((canvas) => {
       canvas.toBlob((blob) => {
         if (!blob) {

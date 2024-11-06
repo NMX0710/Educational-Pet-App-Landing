@@ -5,49 +5,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000&display=swap" rel="stylesheet">
 </head>
+
 <body>
+    <nav class="navbar">
+        <h3 class="logo">PetReady</h3>
+        <button class="button-navbar">CHECK OUT OUR LANDING PAGE!</button>
+    </nav>
     
-        <nav class="navbar">
-            <h3 class="logo">PetReady</h3>
-            <button class="button-navbar">CHECK OUT OUR LANDING PAGE!</button>
-        </nav>
-    
-        <div class="container">
-            <section class="quiz-section">
-                <h1>What kind of dog are you?</h1>
-                <form id="dog-quiz">
-                    <div id="question-container">
-                        <div id="question">Question will be displayed here</div>
-                        <div id="answer-buttons" class="btn-grid">
-                            <button class="btn">Answer 1</button>
-                            <button class="btn">Answer 2</button>
-                            <button class="btn">Answer 3</button>
-                            <button class="btn">Answer 4</button>
-                          </div>
-                    </div>
-                    <div class="controls">
-                        <button id="next-btn" type="button" class="button-next">Next</button>
-                    </div>
-                </form>
-                <div id="result-container" class="result-container hide">
-                    <div id="result-text"></div>
-                    <img id="result-image" src="" alt="Result Image" class="result-image"/>
-                    <div id="share-button-container">
-                        <button id="share-btn" class="button-share hide">Share Your Result</button>
+    <!-- Share Template Modal - Place right after opening body tag to ensure visibility -->
+    <div id="share-template" class="share-template hide">
+        
+        <div class="share-content">
+            <button id="close-share-btn" class="button-share-close">&times;</button>
+            <h1 class="share-title">Your Dog Personality!</h1>
+            <img id="share-image" class="share-image" src="" alt="Dog Result Image"/>
+            <p id="share-description" class="share-description"></p>
+            <div class="share-footer">
+                <h3 class="share-footer-title">Share</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="quiz-section">
+            <h1>What kind of dog are you?</h1>
+            <form id="dog-quiz">
+                <div id="question-container">
+                    <div id="question">Question will be displayed here</div>
+                    <div id="answer-buttons" class="btn-grid">
+                        <button class="btn">Answer 1</button>
+                        <button class="btn">Answer 2</button>
+                        <button class="btn">Answer 3</button>
+                        <button class="btn">Answer 4</button>
                     </div>
                 </div>
-            </section>
-        </div>
-    
+                <div class="controls">
+                    <button id="next-btn" type="button" class="button-next">Next</button>
+                </div>
+            </form>
+            <div id="result-container" class="result-container hide">
+                <div id="result-text"></div>
+                <img id="result-image" src="" alt="Result Image" class="result-image"/>
+                <div id="share-button-container">
+                    <button id="share-btn" class="button-share hide">Share Your Result</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="src/quiz.js" type="module"></script>
+
     <footer>
         <button class="button-footer">BACK TO TOP</button>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-    <script src="src/quiz.js" type="module"></script>
     
 </body>
 </html>
-
-
