@@ -5,9 +5,11 @@ const resultContainer = document.getElementById("result-container");
 const resultText = document.getElementById("result-text");
 const resultImage = document.getElementById("result-image");
 const shareButton = document.getElementById("share-btn");
+const shareTitle = document.getElementById("share-title");
 const shareTemplate = document.getElementById("share-template");
 const shareImage = document.getElementById("share-image");
 const shareDescription = document.getElementById("share-description");
+const shareFooter = document.getElementById("share-footer");
 const closeShareButton = document.getElementById("close-share-btn");
 
 let shuffledQuestions,
@@ -130,7 +132,7 @@ function closeShareTemplate() {
 }
 
 // Add an event listener to generate an image and share when the user wants to share the result
-shareTemplate.addEventListener("click", (event) => {
+shareFooter.addEventListener("click", (event) => {
   // Ensure the click is for sharing and not just closing the modal
   if (event.target.id === "close-share-btn") return;
 
