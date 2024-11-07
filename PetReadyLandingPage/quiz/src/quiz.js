@@ -5,11 +5,10 @@ const resultContainer = document.getElementById("result-container");
 const resultText = document.getElementById("result-text");
 const resultImage = document.getElementById("result-image");
 const shareButton = document.getElementById("share-btn");
-const shareTitle = document.getElementById("share-title");
 const shareTemplate = document.getElementById("share-template");
+const shareTitle = document.getElementById("share-title");
 const shareImage = document.getElementById("share-image");
 const shareDescription = document.getElementById("share-description");
-const shareFooter = document.getElementById("share-footer");
 const closeShareButton = document.getElementById("close-share-btn");
 
 let shuffledQuestions,
@@ -94,6 +93,7 @@ function showResult() {
   nextButton.innerText = "Restart";
   nextButton.classList.remove("hide");
   showingResult = true;
+
   // Populate share template for sharing
   shareImage.src = result.image;
   shareDescription.innerText = `You are a ${result.type}!\n${result.explanation}`;
@@ -131,13 +131,54 @@ function closeShareTemplate() {
   }
 }
 
-// Add an event listener to generate an image and share when the user wants to share the result
-shareFooter.addEventListener("click", (event) => {
-  // Ensure the click is for sharing and not just closing the modal
-  if (event.target.id === "close-share-btn") return;
+// Function to generate the shareable image using html2canvas
+function generateShareableImage(callback) {
+  // Create the share content for generating an image
+  const shareContent = document.createElement("div");
+  shareContent.style.position = "relative";
+  shareContent.style.width = "800px"; // Fixed width for a standard post size
+  shareContent.style.height = "800px"; // Fixed height for a standard post size
+  shareContent.style.padding = "40px"; // Increase padding to balance the layout
+  shareContent.style.background = "white";
+  shareContent.style.borderRadius = "10px";
+  shareContent.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+  shareContent.style.display = "flex";
+  shareContent.style.flexDirection = "column";
+  shareContent.style.alignItems = "center";
+  shareContent.style.justifyContent = "space-around"; // Ensure spacing between elements
 
-  // Use html2canvas to capture the share template as an image
-  html2canvas(shareTemplate)
+  // Clone the elements to be included in the share image
+  const shareTitle = document.getElementById("share-title").cloneNode(true);
+  const shareImage = document.getElementById("share-image").cloneNode(true);
+  const shareDescription = document
+    .getElementById("share-description")
+    .cloneNode(true);
+
+  // Adjust styles for elements to fit well within the post-sized container
+  shareTitle.style.fontSize = "3rem";
+  shareTitle.style.marginBottom = "20px";
+  shareTitle.style.textAlign = "center"; // Ensure text is centered
+
+  shareImage.style.maxWidth = "80%";
+  shareImage.style.maxHeight = "60%";
+  shareImage.style.objectFit = "cover";
+  shareImage.style.borderRadius = "15px";
+  shareImage.style.marginBottom = "20px";
+
+  shareDescription.style.fontSize = "1.5rem";
+  shareDescription.style.textAlign = "center";
+  shareDescription.style.marginTop = "20px";
+
+  // Append elements to the shareContent container
+  shareContent.appendChild(shareTitle);
+  shareContent.appendChild(shareImage);
+  shareContent.appendChild(shareDescription);
+
+  // Temporarily append shareContent to the body to make it visible for html2canvas
+  document.body.appendChild(shareContent);
+
+  // Use html2canvas to capture the share content as an image
+  html2canvas(shareContent)
     .then((canvas) => {
       canvas.toBlob((blob) => {
         if (!blob) {
@@ -148,26 +189,70 @@ shareFooter.addEventListener("click", (event) => {
         // Create a new file object from the canvas blob
         const file = new File([blob], "quiz_result.png", { type: "image/png" });
 
-        // Check if the browser can share the file
-        if (navigator.canShare && navigator.canShare({ files: [file] })) {
-          // Use the Web Share API to share the image file
-          navigator
-            .share({
-              title: "PetReady Quiz Result",
-              text: "Check out my quiz result!",
-              files: [file],
-            })
-            .then(() => console.log("Sharing succeeded"))
-            .catch((error) => console.error("Sharing failed", error));
-        } else {
-          alert("Your browser does not support sharing images");
-        }
+        // Call the callback function with the generated file
+        callback(file);
       }, "image/png");
     })
     .catch((error) => {
       console.error("Failed to generate image", error);
+    })
+    .finally(() => {
+      // Remove the temporary element from the body
+      document.body.removeChild(shareContent);
     });
+}
+
+// Add event listeners to social media share buttons
+document.querySelector(".share-icons").addEventListener("click", (event) => {
+  const target = event.target;
+
+  // Ensure the click is on a share button
+  if (
+    target.id === "twitter-share" ||
+    target.parentNode.id === "twitter-share" ||
+    target.id === "facebook-share" ||
+    target.parentNode.id === "facebook-share"
+  ) {
+    // Generate the shareable image before sharing
+    generateShareableImage((file) => {
+      // Check if the browser can share the file
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        const shareOptions = {
+          title: "PetReady Quiz Result",
+          text: "Check out my quiz result!",
+          files: [file],
+        };
+
+        if (
+          target.id === "twitter-share" ||
+          target.parentNode.id === "twitter-share"
+        ) {
+          navigator
+            .share({
+              ...shareOptions,
+              text: "Check out my quiz result on Twitter!",
+            })
+            .then(() => console.log("Sharing succeeded"))
+            .catch((error) => console.error("Sharing failed", error));
+        } else if (
+          target.id === "facebook-share" ||
+          target.parentNode.id === "facebook-share"
+        ) {
+          navigator
+            .share({
+              ...shareOptions,
+              text: "Check out my quiz result on Facebook!",
+            })
+            .then(() => console.log("Sharing succeeded"))
+            .catch((error) => console.error("Sharing failed", error));
+        }
+      } else {
+        alert("Your browser does not support sharing images");
+      }
+    });
+  }
 });
+
 
 function calculateResult(answers) {
   if (
