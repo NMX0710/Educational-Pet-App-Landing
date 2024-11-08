@@ -131,40 +131,43 @@ function closeShareTemplate() {
   }
 }
 
-// Function to generate the shareable image using html2canvas
+// Twitter and facebook share cannot share image so skip for now
 function generateShareableImage(callback) {
+  // Create a hidden container for generating the image
+  const hiddenContainer = document.createElement("div");
+  hiddenContainer.style.position = "absolute";
+  hiddenContainer.style.top = "-9999px";
+  hiddenContainer.style.visibility = "hidden";
+
   // Create the share content for generating an image
   const shareContent = document.createElement("div");
-  shareContent.style.position = "relative";
   shareContent.style.width = "800px"; // Fixed width for a standard post size
   shareContent.style.height = "800px"; // Fixed height for a standard post size
-  shareContent.style.padding = "40px"; // Increase padding to balance the layout
+  shareContent.style.padding = "40px";
   shareContent.style.background = "white";
   shareContent.style.borderRadius = "10px";
   shareContent.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
   shareContent.style.display = "flex";
   shareContent.style.flexDirection = "column";
   shareContent.style.alignItems = "center";
-  shareContent.style.justifyContent = "space-around"; // Ensure spacing between elements
+  shareContent.style.justifyContent = "space-around";
 
-  // Clone the elements to be included in the share image
+  // Clone elements to include in the image
   const shareTitle = document.getElementById("share-title").cloneNode(true);
   const shareImage = document.getElementById("share-image").cloneNode(true);
   const shareDescription = document
     .getElementById("share-description")
     .cloneNode(true);
 
-  // Adjust styles for elements to fit well within the post-sized container
+  // Set styles for cloned elements
   shareTitle.style.fontSize = "3rem";
   shareTitle.style.marginBottom = "20px";
-  shareTitle.style.textAlign = "center"; // Ensure text is centered
-
+  shareTitle.style.textAlign = "center";
   shareImage.style.maxWidth = "80%";
   shareImage.style.maxHeight = "60%";
   shareImage.style.objectFit = "cover";
   shareImage.style.borderRadius = "15px";
   shareImage.style.marginBottom = "20px";
-
   shareDescription.style.fontSize = "1.5rem";
   shareDescription.style.textAlign = "center";
   shareDescription.style.marginTop = "20px";
@@ -174,10 +177,11 @@ function generateShareableImage(callback) {
   shareContent.appendChild(shareImage);
   shareContent.appendChild(shareDescription);
 
-  // Temporarily append shareContent to the body to make it visible for html2canvas
-  document.body.appendChild(shareContent);
+  // Append shareContent to the hidden container, then to the body for rendering
+  hiddenContainer.appendChild(shareContent);
+  document.body.appendChild(hiddenContainer);
 
-  // Use html2canvas to capture the share content as an image
+  // Capture the content using html2canvas
   html2canvas(shareContent)
     .then((canvas) => {
       canvas.toBlob((blob) => {
@@ -186,10 +190,8 @@ function generateShareableImage(callback) {
           return;
         }
 
-        // Create a new file object from the canvas blob
+        // Create a new file from the blob
         const file = new File([blob], "quiz_result.png", { type: "image/png" });
-
-        // Call the callback function with the generated file
         callback(file);
       }, "image/png");
     })
@@ -197,15 +199,15 @@ function generateShareableImage(callback) {
       console.error("Failed to generate image", error);
     })
     .finally(() => {
-      // Remove the temporary element from the body
-      document.body.removeChild(shareContent);
+      // Clean up the hidden container from the body after capturing
+      document.body.removeChild(hiddenContainer);
     });
 }
 
 // Add event listeners to social media share buttons
 document.querySelector(".share-icons").addEventListener("click", (event) => {
   const target = event.target;
-
+  const result = calculateResult(userAnswers).type;
   // Ensure the click is on a share button
   if (
     target.id === "twitter-share" ||
@@ -213,41 +215,50 @@ document.querySelector(".share-icons").addEventListener("click", (event) => {
     target.id === "facebook-share" ||
     target.parentNode.id === "facebook-share"
   ) {
+    // Get dynamic content for sharing
+    const resultText = "I am a " + result + ".";
+    const descriptionText = "Find out what kind of dog you really are! 👇";
+    const shareUrl = "https://educational-pet-app-quiz-page.vercel.app/";
+    const shareText = `${resultText}\n${descriptionText}\n${shareUrl}`;
+
     // Generate the shareable image before sharing
     generateShareableImage((file) => {
-      // Check if the browser can share the file
+      if (
+        target.id === "twitter-share" ||
+        target.parentNode.id === "twitter-share"
+      ) {
+        // Twitter share link with text and URL
+        const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+          shareText
+        )}`;
+        window.open(twitterUrl, "_blank");
+      } else if (
+        target.id === "facebook-share" ||
+        target.parentNode.id === "facebook-share"
+      ) {
+        // Facebook share link with URL only (Facebook doesn't support prefilled text via URL)
+        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+          shareUrl
+        )}`;
+        window.open(facebookUrl, "_blank");
+      }
+
+      // Fallback to navigator.share if supported (typically for mobile)
       if (navigator.canShare && navigator.canShare({ files: [file] })) {
         const shareOptions = {
           title: "PetReady Quiz Result",
-          text: "Check out my quiz result!",
+          text: shareText,
           files: [file],
         };
 
-        if (
-          target.id === "twitter-share" ||
-          target.parentNode.id === "twitter-share"
-        ) {
-          navigator
-            .share({
-              ...shareOptions,
-              text: "Check out my quiz result on Twitter!",
-            })
-            .then(() => console.log("Sharing succeeded"))
-            .catch((error) => console.error("Sharing failed", error));
-        } else if (
-          target.id === "facebook-share" ||
-          target.parentNode.id === "facebook-share"
-        ) {
-          navigator
-            .share({
-              ...shareOptions,
-              text: "Check out my quiz result on Facebook!",
-            })
-            .then(() => console.log("Sharing succeeded"))
-            .catch((error) => console.error("Sharing failed", error));
-        }
+        navigator
+          .share(shareOptions)
+          .then(() => console.log("Sharing succeeded"))
+          .catch((error) => console.error("Sharing failed", error));
       } else {
-        alert("Your browser does not support sharing images");
+        console.log(
+          "Your browser does not support file sharing via navigator.share"
+        );
       }
     });
   }
