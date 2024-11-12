@@ -5,6 +5,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-feather-bold: "Feather Bold", sans-serif;
+  --font-din-next-rounded: "DIN Next Rounded", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,7 +19,21 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-din-next-rounded);
+}
+
+h1 {
+  font-family: var(--font-feather-bold);
+}
+
+
+.font-feather-bold {
+  font-family: var(--font-feather-bold);
+}
+
+
+.font-din-next-rounded {
+  font-family: var(--font-din-next-rounded);
 }
 
 @layer utilities {
