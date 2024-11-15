@@ -56,7 +56,7 @@ export default function Component() {
           </div>
         )}
         <div className="container mx-auto px-4 py-4 flex justify-between items-center relative z-10">
-          <div className="flex items-center">
+          <div className="flex items-center ml-20">
             <div className="mt-4">
               <Image
                 src="/assets/logo.png"
@@ -67,21 +67,21 @@ export default function Component() {
             </div>
             <span className="text-white text-3xl font-bold mt-6">PetReady</span>
           </div>
-          <select className="bg-transparent text-white border-none mt-6 text-base font-semibold">
+          {/* <select className="bg-transparent text-white border-none mt-6 text-base font-semibold">
             <option className="bg-transparent text-slate-950">
               SWITCH MODE: PARENTS
             </option>
             <option className="bg-transparent text-slate-950">
               SWITCH MODE: KIDS
             </option>
-          </select>
+          </select> */}
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto -mt-52 px-4 relative z-10">
+      <main className="container mx-auto -mt-44 px-4 relative z-10">
         <div className="grid md:grid-cols-3 gap-10 mb-10">
-          <div className="col-span-2 bg-white px-7 mr-28 -mt-52 z-10">
+          <div className="col-span-2 bg-white px-7 mr-28 -mt-52 z-20">
             {mounted && <ModelViewer />}
           </div>
 
@@ -130,7 +130,7 @@ export default function Component() {
             </div>
           </div>
         </div>
-        ;{/* Navigation Bar */}
+        {/* Navigation Bar */}
         <div className="flex justify-center p-4 bg-white">
           <button
             onClick={() => scrollToRef(featuresRef)}
@@ -164,7 +164,7 @@ export default function Component() {
             Kickstart Us
           </button>
         </div>
-        ;
+
         <hr className="my-4 border-t-4 border-gray-300 w-11/12 mx-auto" />
         {/* Features Section */}
         <div ref={featuresRef} className="mb-16 mt-16 flex justify-center">
