@@ -170,7 +170,7 @@ export default function Component() {
         <div ref={featuresRef} className="mb-16 mt-16 flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center max-w-5xl w-full">
             {/* Image on the left */}
-            <div className="md:col-span-1">
+            <div className="md:col-span-1 order-2 md:order-1 flex justify-center">
               <Image
                 src="/assets/1.png"
                 width={500} // Increase width
@@ -181,7 +181,7 @@ export default function Component() {
             </div>
 
             {/* Text on the right */}
-            <div className="md:col-span-2 text-left ml-24">
+            <div className="md:col-span-2 order-1 md:order-2 text-center md:text-left md:ml-24">
               <h2 className="text-6xl font-bold text-gray-600 mb-9 font-feather-bold ">
                 Personalized pet profiles
               </h2>
@@ -197,7 +197,7 @@ export default function Component() {
         <div className="mb-16 flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center max-w-5xl w-full">
             {/* Text on the left */}
-            <div className="md:col-span-2 text-left">
+            <div className="md:col-span-2 md:text-left text-center md:mr-24">
               <h2 className="text-6xl font-bold text-gray-600 mb-9 font-feather-bold ">
                 Responsibility made fun
               </h2>
@@ -208,7 +208,7 @@ export default function Component() {
             </div>
 
             {/* Image on the right */}
-            <div className="md:col-span-1">
+            <div className="md:col-span-1 flex justify-center">
               <Image
                 src="/assets/2.png"
                 width={500} // Increase width
@@ -223,7 +223,7 @@ export default function Component() {
         <div className="mb-16 mt-16 flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center max-w-5xl w-full">
             {/* Image on the left */}
-            <div className="md:col-span-1">
+            <div className="md:col-span-1 order-2 md:order-1 flex justify-center">
               <Image
                 src="/assets/3.png"
                 width={500} // Increase width
@@ -234,7 +234,7 @@ export default function Component() {
             </div>
 
             {/* Text on the right */}
-            <div className="md:col-span-2 text-left ml-24">
+            <div className="md:col-span-2 order-1 md:order-2 text-center md:text-left md:ml-24">
               <h2 className="text-6xl font-bold text-gray-600 mb-9 font-feather-bold ">
                 Family Dashboard
               </h2>
