@@ -17,6 +17,7 @@ const config: Config = {
         foreground: "var(--foreground)",
         // 'custom-light-blue': '#C4F2FF',
         "custom-hover-blue": "#C4F2FF",
+        "custom-blue": "#33C4FA",
       },
       keyframes: {
         pulseGradient: {

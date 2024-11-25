@@ -44,7 +44,7 @@ export default function Component() {
       {/* Header Section */}
       <header className="relative w-full z-20" style={{ height: "50vh" }}>
         {mounted && (
-          <div className="absolute inset-0 overflow-hidden -mt-10">
+          <div className="absolute inset-0 overflow-hidden -mt-[200px] md:-mt-10 ">
             <Image
               src="/assets/Vector.png"
               alt="Header background"
@@ -55,17 +55,20 @@ export default function Component() {
             />
           </div>
         )}
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center relative z-10">
-          <div className="flex items-center ml-20">
+        <div className="container mx-auto px-4 md:py-4 flex justify-between items-center relative z-10">
+          <div className="flex items-center ">
             <div className="mt-4">
               <Image
                 src="/assets/logo.png"
                 alt="PetReady logo"
                 width={62}
                 height={62}
+                className="mx-auto w-10 h-10 md:w-[62px] md:h-[62px] md:mx-0"
               />
             </div>
-            <span className="text-white text-3xl font-bold mt-6">PetReady</span>
+            <span className="text-white text-2xl md:text-3xl font-bold mt-6">
+              PetReady
+            </span>
           </div>
           {/* <select className="bg-transparent text-white border-none mt-6 text-base font-semibold">
             <option className="bg-transparent text-slate-950">
@@ -81,7 +84,7 @@ export default function Component() {
       {/* Main Content */}
       <main className="container mx-auto -mt-44 px-4 relative z-10">
         <div className="grid md:grid-cols-3 gap-10 mb-10">
-          <div className="col-span-2 bg-white px-7 md:mr-28 -mt-[95px] md:-mt-[105px] z-20">
+          <div className="md:col-span-2 bg-white md:px-7 md:mr-28 -mt-[130px] md:-mt-[200px] z-20">
             {mounted && <ModelViewer />}
           </div>
 
@@ -177,7 +180,7 @@ export default function Component() {
                 width={500} // Increase width
                 height={300} // Increase height
                 alt="Family dashboard illustration"
-                className="mt-4 rounded-xl transition-transform duration-300 ease-in-out transform hover:scale-105"
+                className="mt-4 rounded-xl transition-transform duration-300 ease-in-out transform hover:scale-105 w-3/4 md:w-auto"
               />
             </div>
 
@@ -215,7 +218,7 @@ export default function Component() {
                 width={500} // Increase width
                 height={300} // Increase height
                 alt="Family dashboard illustration"
-                className="mt-4 rounded-xl transition-transform duration-300 ease-in-out transform hover:scale-105"
+                className="mt-4 rounded-xl transition-transform duration-300 ease-in-out transform hover:scale-105 w-3/4 md:w-auto"
               />
             </div>
           </div>
@@ -230,7 +233,7 @@ export default function Component() {
                 width={500} // Increase width
                 height={300} // Increase height
                 alt="Family dashboard illustration"
-                className="mt-4 rounded-xl transition-transform duration-300 ease-in-out transform hover:scale-105"
+                className="mt-4 rounded-xl transition-transform duration-300 ease-in-out transform hover:scale-105 w-3/4 md:w-auto"
               />
             </div>
 
