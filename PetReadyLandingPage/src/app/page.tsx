@@ -90,7 +90,7 @@ export default function Component() {
 
           <div className="md:-mx-10">
             <h1
-              className="text-3xl md:text-6xl font-bold mb-12"
+              className="text-4xl md:text-6xl font-bold mb-12"
               style={{ color: "#33CCFF" }}
             >
               Teaching Responsibility in Pet Ownership
