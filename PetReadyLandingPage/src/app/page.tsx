@@ -81,13 +81,13 @@ export default function Component() {
       {/* Main Content */}
       <main className="container mx-auto -mt-44 px-4 relative z-10">
         <div className="grid md:grid-cols-3 gap-10 mb-10">
-          <div className="col-span-2 bg-white px-7 mr-28 -mt-52 z-20">
+          <div className="col-span-2 bg-white px-7 md:mr-28 -mt-[95px] md:-mt-[105px] z-20">
             {mounted && <ModelViewer />}
           </div>
 
-          <div className="-mx-10">
+          <div className="md:-mx-10">
             <h1
-              className="text-6xl font-bold mb-12"
+              className="text-3xl md:text-6xl font-bold mb-12"
               style={{ color: "#33CCFF" }}
             >
               Teaching Responsibility in Pet Ownership
@@ -131,7 +131,8 @@ export default function Component() {
           </div>
         </div>
         {/* Navigation Bar */}
-        <div className="flex justify-center p-4 bg-white">
+        {/* Hidden in mobile */}
+        <div className="hidden md:flex justify-center p-4 bg-white">
           <button
             onClick={() => scrollToRef(featuresRef)}
             className="bg-custom-light-blue text-gray-600 font-semibold mx-14 px-10 py-5 text-md rounded-3xl flex items-center hover:bg-custom-hover-blue transition-colors duration-200"
@@ -182,7 +183,7 @@ export default function Component() {
 
             {/* Text on the right */}
             <div className="md:col-span-2 order-1 md:order-2 text-center md:text-left md:ml-24">
-              <h2 className="text-6xl font-bold text-gray-600 mb-9 font-feather-bold ">
+              <h2 className="text-3xl md:text-6xl font-bold text-gray-600 mb-9 font-feather-bold ">
                 Personalized pet profiles
               </h2>
               <p className="text-xl font-semibold text-gray-500">
@@ -198,7 +199,7 @@ export default function Component() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center max-w-5xl w-full">
             {/* Text on the left */}
             <div className="md:col-span-2 md:text-left text-center md:mr-24">
-              <h2 className="text-6xl font-bold text-gray-600 mb-9 font-feather-bold ">
+              <h2 className="text-3xl md:text-6xl font-bold text-gray-600 mb-9 font-feather-bold ">
                 Responsibility made fun
               </h2>
               <p className="text-xl font-semibold text-gray-500">
@@ -235,7 +236,7 @@ export default function Component() {
 
             {/* Text on the right */}
             <div className="md:col-span-2 order-1 md:order-2 text-center md:text-left md:ml-24">
-              <h2 className="text-6xl font-bold text-gray-600 mb-9 font-feather-bold ">
+              <h2 className="text-3xl md:text-6xl font-bold text-gray-600 mb-9 font-feather-bold ">
                 Family Dashboard
               </h2>
               <p className="text-xl font-semibold text-gray-500">
@@ -248,10 +249,10 @@ export default function Component() {
       </main>
 
       {/* Testimonials Section */}
-      <section ref={feedbackRef} className="py-16 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <div className="rounded-lg p-20 shadow-md max-w-6xl mx-auto bg-white">
-            <h2 className="text-6xl font-bold mb-8 text-center text-gray-800">
+      <section ref={feedbackRef} className="py-8 md:py-16 bg-gray-100">
+        <div className="container mx-auto px-2 md:px-4">
+          <div className="rounded-lg p-5 md:p-20 shadow-md max-w-6xl mx-auto bg-white">
+            <h2 className="text-3xl md:text-6xl font-bold mb-8 text-center text-gray-800">
               What Our Customers Say
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
@@ -351,24 +352,26 @@ export default function Component() {
               alt="PetReady logo"
               width={120}
               height={120}
-              className="mx-auto"
+              className="mx-auto w-14 h-14  md:w-24 md:h-24"
             />
-            <p className="text-3xl font-bold mb-6 text-black">PetReady</p>
-            <p className="mb-1 text-xl font-normal text-black">CONTACT US</p>
-            <p className="mb-6 text-xl font-bold text-black">
+            <p className="text-xl md:text-3xl font-bold mb-1 text-black">
+              PetReady
+            </p>
+            <p className="mb-1 md:text-xl font-normal text-black">CONTACT US</p>
+            <p className="mb-6 md:text-xl font-bold text-black">
               support@petready.app
             </p>
-            <div className="flex justify-center gap-24 mb-4">
-              <button className="text-slate-600 text-xl font-semibold">
+            <div className="flex justify-center gap-10 md:gap-24 mb-4">
+              <button className="text-slate-600 md:text-xl font-semibold">
                 APP
               </button>
-              <button className="text-slate-600 text-xl font-semibold">
+              <button className="text-slate-600 md:text-xl font-semibold">
                 FOLLOW US
               </button>
-              <button className="text-slate-600 text-xl font-semibold">
+              <button className="text-slate-600 md:text-xl font-semibold">
                 TEAM
               </button>
-              <button className="text-slate-600 text-xl font-semibold">
+              <button className="text-slate-600 md:text-xl font-semibold">
                 PRIVACY
               </button>
             </div>
