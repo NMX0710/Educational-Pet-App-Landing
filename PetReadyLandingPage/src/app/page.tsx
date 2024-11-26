@@ -44,7 +44,7 @@ export default function Component() {
       {/* Header Section */}
       <header className="relative w-full z-20" style={{ height: "50vh" }}>
         {mounted && (
-          <div className="absolute inset-0 overflow-hidden -mt-10">
+          <div className="absolute inset-0 overflow-hidden -mt-[200px] md:-mt-10 ">
             <Image
               src="/assets/Vector.png"
               alt="Header background"
@@ -55,39 +55,42 @@ export default function Component() {
             />
           </div>
         )}
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center relative z-10">
-          <div className="flex items-center">
+        <div className="container mx-auto px-4 md:py-4 flex justify-between items-center relative z-10">
+          <div className="flex items-center ">
             <div className="mt-4">
               <Image
                 src="/assets/logo.png"
                 alt="PetReady logo"
                 width={62}
                 height={62}
+                className="mx-auto w-10 h-10 md:w-[62px] md:h-[62px] md:mx-0"
               />
             </div>
-            <span className="text-white text-3xl font-bold mt-6">PetReady</span>
+            <span className="text-white text-2xl md:text-3xl font-bold mt-6">
+              PetReady
+            </span>
           </div>
-          <select className="bg-transparent text-white border-none mt-6 text-base font-semibold">
+          {/* <select className="bg-transparent text-white border-none mt-6 text-base font-semibold">
             <option className="bg-transparent text-slate-950">
               SWITCH MODE: PARENTS
             </option>
             <option className="bg-transparent text-slate-950">
               SWITCH MODE: KIDS
             </option>
-          </select>
+          </select> */}
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto -mt-52 px-4 relative z-10">
+      <main className="container mx-auto -mt-44 px-4 relative z-10">
         <div className="grid md:grid-cols-3 gap-10 mb-10">
-          <div className="col-span-2 bg-white px-7 mr-28 -mt-52 z-10">
+          <div className="md:col-span-2 bg-white md:px-7 md:mr-28 -mt-[130px] md:-mt-[200px] z-20">
             {mounted && <ModelViewer />}
           </div>
 
-          <div className="-mx-10">
+          <div className="md:-mx-10">
             <h1
-              className="text-6xl font-bold mb-12"
+              className="text-4xl md:text-6xl font-bold mb-12"
               style={{ color: "#33CCFF" }}
             >
               Teaching Responsibility in Pet Ownership
@@ -130,8 +133,9 @@ export default function Component() {
             </div>
           </div>
         </div>
-        ;{/* Navigation Bar */}
-        <div className="flex justify-center p-4 bg-white">
+        {/* Navigation Bar */}
+        {/* Hidden in mobile */}
+        <div className="hidden md:flex justify-center p-4 bg-white">
           <button
             onClick={() => scrollToRef(featuresRef)}
             className="bg-custom-light-blue text-gray-600 font-semibold mx-14 px-10 py-5 text-md rounded-3xl flex items-center hover:bg-custom-hover-blue transition-colors duration-200"
@@ -164,25 +168,25 @@ export default function Component() {
             Kickstart Us
           </button>
         </div>
-        ;
+
         <hr className="my-4 border-t-4 border-gray-300 w-11/12 mx-auto" />
         {/* Features Section */}
         <div ref={featuresRef} className="mb-16 mt-16 flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center max-w-5xl w-full">
             {/* Image on the left */}
-            <div className="md:col-span-1">
+            <div className="md:col-span-1 order-2 md:order-1 flex justify-center">
               <Image
                 src="/assets/1.png"
                 width={500} // Increase width
                 height={300} // Increase height
                 alt="Family dashboard illustration"
-                className="mt-4 rounded-xl transition-transform duration-300 ease-in-out transform hover:scale-105"
+                className="mt-4 rounded-xl transition-transform duration-300 ease-in-out transform hover:scale-105 w-3/4 md:w-auto"
               />
             </div>
 
             {/* Text on the right */}
-            <div className="md:col-span-2 text-left ml-24">
-              <h2 className="text-6xl font-bold text-gray-600 mb-9 font-feather-bold ">
+            <div className="md:col-span-2 order-1 md:order-2 text-center md:text-left md:ml-24">
+              <h2 className="text-3xl md:text-6xl font-bold text-gray-600 mb-9 font-feather-bold ">
                 Personalized pet profiles
               </h2>
               <p className="text-xl font-semibold text-gray-500">
@@ -197,8 +201,8 @@ export default function Component() {
         <div className="mb-16 flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center max-w-5xl w-full">
             {/* Text on the left */}
-            <div className="md:col-span-2 text-left">
-              <h2 className="text-6xl font-bold text-gray-600 mb-9 font-feather-bold ">
+            <div className="md:col-span-2 md:text-left text-center md:mr-24">
+              <h2 className="text-3xl md:text-6xl font-bold text-gray-600 mb-9 font-feather-bold ">
                 Responsibility made fun
               </h2>
               <p className="text-xl font-semibold text-gray-500">
@@ -208,13 +212,13 @@ export default function Component() {
             </div>
 
             {/* Image on the right */}
-            <div className="md:col-span-1">
+            <div className="md:col-span-1 flex justify-center">
               <Image
                 src="/assets/2.png"
                 width={500} // Increase width
                 height={300} // Increase height
                 alt="Family dashboard illustration"
-                className="mt-4 rounded-xl transition-transform duration-300 ease-in-out transform hover:scale-105"
+                className="mt-4 rounded-xl transition-transform duration-300 ease-in-out transform hover:scale-105 w-3/4 md:w-auto"
               />
             </div>
           </div>
@@ -223,19 +227,19 @@ export default function Component() {
         <div className="mb-16 mt-16 flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center max-w-5xl w-full">
             {/* Image on the left */}
-            <div className="md:col-span-1">
+            <div className="md:col-span-1 order-2 md:order-1 flex justify-center">
               <Image
                 src="/assets/3.png"
                 width={500} // Increase width
                 height={300} // Increase height
                 alt="Family dashboard illustration"
-                className="mt-4 rounded-xl transition-transform duration-300 ease-in-out transform hover:scale-105"
+                className="mt-4 rounded-xl transition-transform duration-300 ease-in-out transform hover:scale-105 w-3/4 md:w-auto"
               />
             </div>
 
             {/* Text on the right */}
-            <div className="md:col-span-2 text-left ml-24">
-              <h2 className="text-6xl font-bold text-gray-600 mb-9 font-feather-bold ">
+            <div className="md:col-span-2 order-1 md:order-2 text-center md:text-left md:ml-24">
+              <h2 className="text-3xl md:text-6xl font-bold text-gray-600 mb-9 font-feather-bold ">
                 Family Dashboard
               </h2>
               <p className="text-xl font-semibold text-gray-500">
@@ -248,10 +252,10 @@ export default function Component() {
       </main>
 
       {/* Testimonials Section */}
-      <section ref={feedbackRef} className="py-16 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <div className="rounded-lg p-20 shadow-md max-w-6xl mx-auto bg-white">
-            <h2 className="text-6xl font-bold mb-8 text-center text-gray-800">
+      <section ref={feedbackRef} className="py-8 md:py-16 bg-gray-100">
+        <div className="container mx-auto px-2 md:px-4">
+          <div className="rounded-lg p-5 md:p-20 shadow-md max-w-6xl mx-auto bg-white">
+            <h2 className="text-3xl md:text-6xl font-bold mb-8 text-center text-gray-800">
               What Our Customers Say
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
@@ -351,24 +355,26 @@ export default function Component() {
               alt="PetReady logo"
               width={120}
               height={120}
-              className="mx-auto"
+              className="mx-auto w-14 h-14  md:w-24 md:h-24"
             />
-            <p className="text-3xl font-bold mb-6 text-black">PetReady</p>
-            <p className="mb-1 text-xl font-normal text-black">CONTACT US</p>
-            <p className="mb-6 text-xl font-bold text-black">
+            <p className="text-xl md:text-3xl font-bold mb-1 text-black">
+              PetReady
+            </p>
+            <p className="mb-1 md:text-xl font-normal text-black">CONTACT US</p>
+            <p className="mb-6 md:text-xl font-bold text-black">
               support@petready.app
             </p>
-            <div className="flex justify-center gap-24 mb-4">
-              <button className="text-slate-600 text-xl font-semibold">
+            <div className="flex justify-center gap-10 md:gap-24 mb-4">
+              <button className="text-slate-600 md:text-xl font-semibold">
                 APP
               </button>
-              <button className="text-slate-600 text-xl font-semibold">
+              <button className="text-slate-600 md:text-xl font-semibold">
                 FOLLOW US
               </button>
-              <button className="text-slate-600 text-xl font-semibold">
+              <button className="text-slate-600 md:text-xl font-semibold">
                 TEAM
               </button>
-              <button className="text-slate-600 text-xl font-semibold">
+              <button className="text-slate-600 md:text-xl font-semibold">
                 PRIVACY
               </button>
             </div>

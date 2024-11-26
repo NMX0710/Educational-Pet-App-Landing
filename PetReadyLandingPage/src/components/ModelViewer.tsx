@@ -11,19 +11,25 @@ function Model() {
 
 export default function ModelViewer() {
   return (
-    <div style={{ width: '100%', height: '64vh'}}> {/* Expand height */}
+    <div
+      className="w-full h-[43vh] md:h-[64vh]" // Responsive height adjustments
+      style={{ width: "100%" }}
+    >
+      {" "}
+      {/* Expand height */}
       <Canvas camera={{ position: new Vector3(1.5, 1, 2), fov: 45 }}>
         {/* Add ambient and directional lights */}
-        <ambientLight intensity={0.8} />  // Increased ambient light intensity
+        <ambientLight intensity={0.8} /> // Increased ambient light intensity
         <directionalLight intensity={1.5} position={[5, 5, 5]} />
-        <pointLight position={[-2, 5, -2]} intensity={0.8} />  // Increased point light intensity
-        <pointLight position={[2, -3, 5]} intensity={0.8} color="#ffffff" />  // Added another point light
-
+        <pointLight position={[-2, 5, -2]} intensity={0.8} /> // Increased point
+        light intensity
+        <pointLight position={[2, -3, 5]} intensity={0.8} color="#ffffff" /> //
+        Added another point light
         <Suspense fallback={null}>
           <Model />
         </Suspense>
         {/* <OrbitControls enableZoom={true} /> */}
       </Canvas>
     </div>
-  );
+  )
 }
